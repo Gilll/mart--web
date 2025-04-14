@@ -1,0 +1,422 @@
+.section-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  display: flex;
+  z-index: 1;
+}
+.section-bg img {
+  width: 100%;
+  height: 0;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.section-bg {
+  align-items: center;
+}
+
+.section-bg.slide-up {
+  align-items: end;
+}
+
+.section-container {
+  position: relative;
+  z-index: 2;
+}
+
+.pg-active .section-bg img {
+  height: 100%;
+  transform: scale(1);
+  transition: all 1s ease-in-out;
+}
+.pg-active .main-view__gray-line {
+  width: 100%;
+  transition: width 1s 2s ease-in-out;
+}
+.pg-active .main-view__button-text {
+  height: 4rem;
+  transition: 1s 1.2s ease-in-out;
+}
+.pg-active .main-view__button-text.row3 {
+  height: 6rem;
+}
+.pg-active .main-view__arrow {
+  height: 2.5rem;
+  transition: 1s 1.2s ease-in-out;
+}
+
+.header a {
+  color: #140E0A;
+  transition: 0.5s;
+  mix-blend-mode: normal;
+}
+.header.white a {
+  color: #FFFEF8;
+  transition: 0.5s;
+  mix-blend-mode: normal;
+}
+.header.white path {
+  fill: #FFFEF8;
+  transition: 0.5s;
+  mix-blend-mode: normal;
+}
+
+.animation-button-height {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition: 0.2s linear;
+}
+
+.pg-active .animation-button-height {
+  height: 37.5rem;
+  transition: 1s ease-in-out;
+}
+
+.animation-slide-up {
+  transform: translateY(105%);
+  transition: all 0.3s ease-in-out;
+}
+.animation-slide-up__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.pg-active .animation-slide-up {
+  transform: translateY(0);
+  transition-duration: 0.5s;
+  transition: all 0.5s ease-in-out;
+}
+
+.pg-active .animation-slide-up.duration-1 {
+  transition-duration: 1s;
+}
+
+.animation-slide-down {
+  transform: translateY(-105%);
+  transition: all 0.3s ease-in-out;
+}
+.animation-slide-down__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.pg-active .animation-slide-down {
+  transform: translateY(0);
+  transition-duration: 0.5s;
+  transition: all 0.5s ease-in-out;
+}
+
+.pg-active .animation-slide-down.duration-1 {
+  transition-duration: 1s;
+}
+
+.animation-slide-right {
+  transform: translateX(-105%);
+  transition: all 0.3s ease-in-out;
+}
+.animation-slide-right__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.pg-active .animation-slide-right {
+  transform: translateX(0);
+  transition-duration: 0.5s;
+  transition: all 0.5s ease-in-out;
+}
+
+.animation-slide-left {
+  transform: translateX(105%);
+  transition: all 0.3s ease-in-out;
+}
+.animation-slide-left__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.pg-active .animation-slide-left {
+  transform: translateX(0);
+  transition-duration: 0.5s;
+  transition: all 0.5s ease-in-out;
+}
+
+.pg-active .animation-delay-01 {
+  transition-delay: 0.1s !important;
+}
+
+.pg-active .animation-delay-02 {
+  transition-delay: 0.2s !important;
+}
+
+.pg-active .animation-delay-03 {
+  transition-delay: 0.3s !important;
+}
+
+.pg-active .animation-delay-05 {
+  transition-delay: 0.5s !important;
+}
+
+.pg-active .animation-delay-06 {
+  transition-delay: 0.6s !important;
+}
+
+.pg-active .animation-delay-07 {
+  transition-delay: 0.7s !important;
+}
+
+.pg-active .animation-delay-08 {
+  transition-delay: 0.8s !important;
+}
+
+.pg-active .animation-delay-09 {
+  transition-delay: 0.9s !important;
+}
+
+.pg-active .animation-delay-1 {
+  transition-delay: 1s !important;
+}
+
+.pg-active .animation-delay-11 {
+  transition-delay: 1.1s !important;
+}
+
+.pg-active .animation-delay-12 {
+  transition-delay: 1.2s !important;
+}
+
+.pg-active .animation-delay-13 {
+  transition-delay: 1.3s !important;
+}
+
+.pg-active .animation-delay-14 {
+  transition-delay: 1.4s !important;
+}
+
+.pg-active .animation-delay-15 {
+  transition-delay: 1.5s !important;
+}
+
+.pg-active .animation-delay-16 {
+  transition-delay: 1.6s !important;
+}
+
+.pg-active .animation-delay-17 {
+  transition-delay: 1.7s !important;
+}
+
+.pg-active .animation-delay-18 {
+  transition-delay: 1.8s !important;
+}
+
+.pg-active .animation-delay-19 {
+  transition-delay: 1.9s !important;
+}
+
+.pg-active .animation-delay-2 {
+  transition-delay: 2s !important;
+}
+
+.pg-active .animation-delay-3 {
+  transition-delay: 3s !important;
+}
+
+.projects-swiper-slide__wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: end;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+}
+.projects-swiper-slide__wrapper img {
+  height: 0;
+  transform: scale(1.2);
+  transition: 0.3s;
+}
+
+.pg-active.animation-state-0 .projects .projects-swiper-slide__wrapper img {
+  height: calc(100vh - 40rem);
+  transform: scale(1.2);
+  transition: 1s;
+}
+
+.pg-active.animation-state-1 .projects .projects-swiper-slide__wrapper img {
+  height: 100vh;
+  transform: scale(1);
+  transition: 1s;
+}
+
+.swiper-slide.projects-swiper-slide {
+  clip-path: inset(0% 0 0% 0);
+}
+
+.swiper-slide.projects-swiper-slide.swiper-slide-active {
+  animation: swiper-clip 0.8s ease-in-out forwards;
+}
+
+.pg-active.animation-state-0 .projects__gray-line {
+  width: 100%;
+  bottom: 28.5555555556vh;
+  transition: width 1s 2s, bottom 1s;
+}
+
+.pg-active.animation-state-1 .projects__gray-line {
+  width: 100%;
+  bottom: 42vh;
+  transition: width 1s 1s, bottom 1s;
+}
+
+.pg-active.animation-state-0 .projects-swiper-slide__content {
+  bottom: 28.8888888889vh;
+  transition: 1s;
+}
+
+.pg-active.animation-state-1 .projects-swiper-slide__content {
+  bottom: 42.3333333333vh;
+  transition: 1s;
+}
+
+.pg-active.animation-state-0 .projects-swiper-slide__title-animation {
+  height: 7.2rem;
+  transition: 1s 2s;
+}
+
+.pg-active.animation-state-1 .projects-swiper-slide__title-animation {
+  height: 7.2rem;
+  transition: 1s 1s;
+}
+
+.pg-active.animation-state-0 .projects-swiper-slide__text-animation {
+  height: 2rem;
+  transition: 1s 2.3s;
+}
+
+.pg-active.animation-state-1 .projects-swiper-slide__text-animation {
+  height: 2rem;
+  transition: 1s 1.3s;
+}
+
+.pg-active.projects-section.animation-state-0 .animation-button-height {
+  height: 0;
+  transition: 1s;
+}
+
+.pg-active.projects-section.animation-state-1 .animation-button-height {
+  height: 37.5rem;
+  transition: 1s 1s;
+}
+
+.pg-active.premium-section.animation-state-1 .animation-button-height {
+  height: 0;
+  transition: 1s 0s;
+}
+
+.pg-active.premium-section.animation-state-0 .animation-button-height {
+  height: 37.5rem;
+  transition: 1s;
+}
+
+.pg-active.projects-section.animation-state-0 .main-view__arrow {
+  height: 0;
+  transition: 1s;
+}
+
+.pg-active.projects-section.animation-state-1 .main-view__arrow {
+  height: 2.5rem;
+  transition: 1s 1s;
+}
+
+.pg-active.premium-section.animation-state-1 .main-view__arrow {
+  height: 0;
+  transition: 1s;
+}
+
+.pg-active.premium-section.animation-state-0 .main-view__arrow {
+  height: 2.5rem;
+  transition: 1s;
+}
+
+.pg-active.projects-section.animation-state-0 .main-view__button-text {
+  height: 0;
+  transition: 1s;
+}
+
+.pg-active.projects-section.animation-state-1 .main-view__button-text {
+  height: 4rem;
+  transition: 1s 1s;
+}
+
+.pg-active.premium-section.animation-state-1 .main-view__button-text {
+  height: 0;
+  transition: 1s;
+}
+
+.pg-active.premium-section.animation-state-0 .main-view__button-text {
+  height: 4rem;
+  transition: 1s;
+}
+
+.pg-active .supervisors__gray-line {
+  width: 100%;
+  transition: 1s 2s;
+}
+
+@keyframes swiper-clip {
+  0% {
+    clip-path: inset(50% 0 50% 0);
+  }
+  100% {
+    clip-path: inset(0% 0 0% 0);
+  }
+}
+@keyframes swiper-clip-top {
+  0% {
+    clip-path: inset(100% 0 0% 0);
+  }
+  100% {
+    clip-path: inset(0% 0 0% 0);
+  }
+}
+@keyframes swiper-clip-bottom {
+  0% {
+    clip-path: inset(0% 0 100% 0);
+  }
+  100% {
+    clip-path: inset(0% 0 0% 0);
+  }
+}
+@keyframes swiper-clip-reverse {
+  0% {
+    clip-path: inset(0% 0 0% 0);
+  }
+  100% {
+    clip-path: inset(50% 0 50% 0);
+  }
+}
+@keyframes swiper-clip-top-reverse {
+  0% {
+    clip-path: inset(0% 0 0% 0);
+  }
+  100% {
+    clip-path: inset(100% 0 0% 0);
+  }
+}
+@keyframes swiper-clip-bottom-reverse {
+  0% {
+    clip-path: inset(0% 0 0% 0);
+  }
+  100% {
+    clip-path: inset(0% 0 100% 0);
+  }
+}
+
+/*# sourceMappingURL=animations.css.map */
