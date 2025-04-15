@@ -1,0 +1,17 @@
+
+@font-face {
+    font-family: 'Circe';
+    src: local('Circe Regular'), local('Circe-Regular'),
+    url('../fonts/Circe.woff2') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Forum';
+    src: local('Forum Regular'), local('Forum-Regular'),
+    url('../fonts/Forum.woff2') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
