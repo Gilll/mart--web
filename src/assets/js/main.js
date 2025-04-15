@@ -8,13 +8,16 @@ $(document).ready(function() {
             let page = this.pages[this.oldIndex]
             let nextPage = $(this.pages[this.index])
             let animationsSteps = parseInt($(page).attr("animation-steps"))
+            let animationsMobSteps = parseInt($(page).attr("animation-mob-steps"))
             let animationsStepsNextPage = parseInt($(nextPage).attr("animation-steps"))
+            let animationsMobStepsNextPage = parseInt($(nextPage).attr("animation-mob-steps"))
             let animationsStep = parseInt($(page).attr("animation-step"))
             let animationsStepNextPage = parseInt($(nextPage).attr("animation-step"))
             let whiteHeaderSteps = $(page).attr("white-header-steps")?.split(",") || []
             let whiteHeaderStepsNextPage = $(nextPage).attr("white-header-steps")?.split(",") || []
+            let isMobile = window.innerWidth <= 768;
 
-            if (animationsSteps) {
+            if (animationsSteps || (isMobile && animationsMobSteps)) {
                 if (this.index < this.oldIndex) {
                     let vid = document.getElementById("premium-video")
                     if (animationsStep - 1 >= 0) {
@@ -38,7 +41,7 @@ $(document).ready(function() {
                     }
                 } else {
                     let vid = document.getElementById("premium-video")
-                    if (animationsStep + 1 < animationsSteps) {
+                    if (animationsStep + 1 < (isMobile ? animationsMobSteps : animationsSteps)) {
                         pages.index = this.oldIndex
                         $(page).attr("animation-step", animationsStep + 1)
                             .removeClass("animation-state-" + animationsStep)
