@@ -3,7 +3,8 @@ $(document).ready(function() {
     const pages = new Pageable("#container", {
         pips: false,
         animation: 0,
-        delay: 350,
+        delay: 500,
+        swipeThreshold: 100,
         onBeforeStart: function (index) {
             let page = this.pages[this.oldIndex]
             let nextPage = $(this.pages[this.index])
@@ -16,64 +17,75 @@ $(document).ready(function() {
             let whiteHeaderSteps = $(page).attr("white-header-steps")?.split(",") || []
             let whiteHeaderStepsNextPage = $(nextPage).attr("white-header-steps")?.split(",") || []
             let isMobile = window.innerWidth <= 768;
+            let container = $("#loading-section")
 
-            if (animationsSteps || (isMobile && animationsMobSteps)) {
-                if (this.index < this.oldIndex) {
-                    let vid = document.getElementById("premium-video")
-                    if (animationsStep - 1 >= 0) {
-                        pages.index = this.oldIndex
-                        $(page).attr("animation-step", animationsStep - 1)
-                            .removeClass("animation-state-" + animationsStep)
-                            .addClass("animation-state-" + (animationsStep - 1))
-                        $(".header").toggleClass("white", whiteHeaderSteps.includes("" + (animationsStep - 1)))
-                        if ($(page).hasClass("video") && animationsStep == 0) {
-                            if (vid) vid.play()
+            if (!container.hasClass("isLocked")) {
+                container.addClass("isLocked")
+                setTimeout(function () {
+                    container.removeClass("isLocked")
+                }, 1000)
+
+                if (animationsSteps || (isMobile && animationsMobSteps)) {
+                    if (this.index < this.oldIndex) {
+                        let vid = document.getElementById("premium-video")
+                        if (animationsStep - 1 >= 0) {
+                            pages.index = this.oldIndex
+                            $(page).attr("animation-step", animationsStep - 1)
+                                .removeClass("animation-state-" + animationsStep)
+                                .addClass("animation-state-" + (animationsStep - 1))
+                            $(".header").toggleClass("white", whiteHeaderSteps.includes("" + (animationsStep - 1)))
+                            if ($(page).hasClass("video") && animationsStep == 0) {
+                                if (vid) vid.play()
+                            } else {
+                                if (vid) vid.pause()
+                            }
                         } else {
-                            if (vid) vid.pause()
+                            if (nextPage.hasClass("holder")) {
+                                this.index = this.oldIndex
+                            } else {
+                                $(".header").toggleClass("white", this.pages[this.index].classList.contains("white-header"))
+                                page.classList.remove("pg-active")
+                            }
                         }
                     } else {
-                        if (nextPage.hasClass("holder")) {
-                            this.index = this.oldIndex
+                        let vid = document.getElementById("premium-video")
+                        if (animationsStep + 1 < (isMobile ? animationsMobSteps : animationsSteps)) {
+                            pages.index = this.oldIndex
+                            $(page).attr("animation-step", animationsStep + 1)
+                                .removeClass("animation-state-" + animationsStep)
+                                .addClass("animation-state-" + (animationsStep + 1))
+                            $(".header").toggleClass("white", whiteHeaderSteps.includes("" + (animationsStep + 1)))
+                            if ($(page).hasClass("video") && animationsStep == 0) {
+                                if (vid) vid.play()
+                            } else {
+                                if (vid) vid.pause()
+                            }
                         } else {
-                            $(".header").toggleClass("white", this.pages[this.index].classList.contains("white-header"))
-                            page.classList.remove("pg-active")
+                            if (nextPage.hasClass("holder")) {
+                                this.index = this.oldIndex
+                            } else {
+                                $(".header").toggleClass("white", this.pages[this.index].classList.contains("white-header"))
+                                page.classList.remove("pg-active")
+                            }
                         }
                     }
                 } else {
-                    let vid = document.getElementById("premium-video")
-                    if (animationsStep + 1 < (isMobile ? animationsMobSteps : animationsSteps)) {
-                        pages.index = this.oldIndex
-                        $(page).attr("animation-step", animationsStep + 1)
-                            .removeClass("animation-state-" + animationsStep)
-                            .addClass("animation-state-" + (animationsStep + 1))
-                        $(".header").toggleClass("white", whiteHeaderSteps.includes("" + (animationsStep + 1)))
-                        if ($(page).hasClass("video") && animationsStep == 0) {
-                            if (vid) vid.play()
-                        } else {
-                            if (vid) vid.pause()
-                        }
+                    if (nextPage.hasClass("holder")) {
+                        this.index = this.oldIndex
                     } else {
-                        if (nextPage.hasClass("holder")) {
-                            this.index = this.oldIndex
+                        let vid = document.getElementById("premium-video")
+                        page.classList.remove("pg-active")
+                        if (vid) vid.pause()
+                        if (animationsStepsNextPage) {
+                            $(".header").toggleClass("white", whiteHeaderStepsNextPage.includes("" + animationsStepNextPage))
                         } else {
                             $(".header").toggleClass("white", this.pages[this.index].classList.contains("white-header"))
-                            page.classList.remove("pg-active")
                         }
                     }
                 }
+
             } else {
-                if (nextPage.hasClass("holder")) {
-                    this.index = this.oldIndex
-                } else {
-                    let vid = document.getElementById("premium-video")
-                    page.classList.remove("pg-active")
-                    if (vid) vid.pause()
-                    if (animationsStepsNextPage) {
-                        $(".header").toggleClass("white", whiteHeaderStepsNextPage.includes("" + animationsStepNextPage))
-                    } else {
-                        $(".header").toggleClass("white", this.pages[this.index].classList.contains("white-header"))
-                    }
-                }
+                this.index = this.oldIndex
             }
         },
         onStart: function() {
