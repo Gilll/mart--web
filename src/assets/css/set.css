@@ -112,7 +112,7 @@ input[type="number"] {
     html {
         font-size: 5px;
         font-size: 1.5625vw;
-        font-size: calc((100/393) * 10vw);
+        font-size: calc((100/460) * 10vw);
     -webkit-text-size-adjust: none;
     }
 
