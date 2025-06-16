@@ -224,6 +224,7 @@ section.main-view {
 
 .projects-top {
   width: 100%;
+  color: #140E0A;
   background-color: #FFFEF8;
   position: absolute;
   overflow: hidden;
@@ -4045,6 +4046,25 @@ input.input-text, textarea.input-text {
 .pg-active .project-support__gray-line-vertical {
   height: 39rem;
   transition: 1s 1.5s;
+}
+
+.main-slide, .main-swiper, .main-swiper .swiper-slide {
+  width: 100vw;
+  height: 100vh;
+}
+
+#container1 {
+  width: 100vw;
+  height: 100vh;
+}
+
+.main-slide__content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  font-size: 8rem;
+  align-items: center;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */
