@@ -57,55 +57,67 @@ $(document).ready(function() {
             if (!lockScrollEv) {
                 lockScrollEv = true
                 if (ev.originalEvent.deltaY > 0) {
-                    if (s.activeIndex <= s.slides.length) {
-                        let el = s.slides[s.activeIndex]
-                        if (el.dataset.animationSteps) {
-                            let steps = parseInt(el.dataset.animationSteps),
-                                step = parseInt(el.dataset.animationStep),
-                                whiteHeader = el.dataset.whiteHeaderSteps.split(',') || []
-                            if (step + 1 < steps) {
-                                el.classList.remove('animation-state-' + step)
-                                el.classList.add('animation-state-' + (step + 1))
-                                el.dataset.animationStep = step + 1
-                                if (whiteHeader.includes(step + 1 + "")) {
-                                    $(".header").addClass("white")
-                                } else {
-                                    $(".header").removeClass("white")
-                                }
-                                setTimeout(function() { lockScrollEv = false }, 1000)
+                    let el = s.slides[s.activeIndex]
+                    if (el.dataset.animationSteps) {
+                        let steps = parseInt(el.dataset.animationSteps),
+                            step = parseInt(el.dataset.animationStep),
+                            whiteHeader = el.dataset.whiteHeaderSteps ? el.dataset.whiteHeaderSteps.split(',') : []
+                        if (step + 1 < steps) {
+                            el.classList.remove('animation-state-' + step)
+                            el.classList.add('animation-state-' + (step + 1))
+                            el.dataset.animationStep = step + 1
+                            if (whiteHeader.includes(step + 1 + "")) {
+                                $(".header").addClass("white")
                             } else {
+                                $(".header").removeClass("white")
+                            }
+                            setTimeout(function() { lockScrollEv = false }, 1000)
+                        } else {
+                            if (s.activeIndex <= s.slides.length) {
                                 s.slideNext();
                                 setTimeout(function() { lockScrollEv = false }, 2000)
+                            } else {
+                                lockScrollEv = false
                             }
-                        } else {
+                        }
+                    } else {
+                        if (s.activeIndex <= s.slides.length) {
                             s.slideNext();
                             setTimeout(function() { lockScrollEv = false }, 2000)
+                        } else {
+                            lockScrollEv = false
                         }
                     }
                 } else if (ev.originalEvent.deltaY < 0) {
-                    if (s.activeIndex > 0) {
-                        let el = s.slides[s.activeIndex]
-                        if (el.dataset.animationSteps) {
-                            let steps = parseInt(el.dataset.animationSteps),
-                                step = parseInt(el.dataset.animationStep),
-                                whiteHeader = el.dataset.whiteHeaderSteps.split(',') || []
-                            if (step - 1 >= 0) {
-                                el.classList.remove('animation-state-' + step)
-                                el.classList.add('animation-state-' + (step - 1))
-                                el.dataset.animationStep = step - 1
-                                if (whiteHeader.includes(step - 1 + "")) {
-                                    $(".header").addClass("white")
-                                } else {
-                                    $(".header").removeClass("white")
-                                }
-                                setTimeout(function() { lockScrollEv = false }, 1000)
+                    let el = s.slides[s.activeIndex]
+                    if (el.dataset.animationSteps) {
+                        let steps = parseInt(el.dataset.animationSteps),
+                            step = parseInt(el.dataset.animationStep),
+                            whiteHeader = el.dataset.whiteHeaderSteps ? el.dataset.whiteHeaderSteps.split(',') : []
+                        if (step - 1 >= 0) {
+                            el.classList.remove('animation-state-' + step)
+                            el.classList.add('animation-state-' + (step - 1))
+                            el.dataset.animationStep = step - 1
+                            if (whiteHeader.includes(step - 1 + "")) {
+                                $(".header").addClass("white")
                             } else {
+                                $(".header").removeClass("white")
+                            }
+                            setTimeout(function() { lockScrollEv = false }, 1000)
+                        } else {
+                            if (s.activeIndex > 0) {
                                 s.slidePrev();
                                 setTimeout(function() { lockScrollEv = false }, 2000)
+                            } else {
+                                lockScrollEv = false
                             }
-                        } else {
+                        }
+                    } else {
+                        if (s.activeIndex > 0) {
                             s.slidePrev();
                             setTimeout(function() { lockScrollEv = false }, 2000)
+                        } else {
+                            lockScrollEv = false
                         }
                     }
                 }

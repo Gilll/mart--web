@@ -243,8 +243,8 @@ $vh: calc(100vh/900);
 }
 
 .pg-active.animation-state-0 .projects .projects-swiper-slide__wrapper img {
-  height: calc(100vh - 40rem);
-  transform: scale(1.2);
+  height: 100vh;
+  transform: scale(1.4);
   transition: 1s;
 }
 

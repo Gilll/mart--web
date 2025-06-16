@@ -4145,3 +4145,25 @@ input.input-text, textarea.input-text {
   overflow-x: hidden;
   overflow-y: auto;
 }
+
+.contacts-page .footer {
+  position: relative;
+}
+
+.faq__img-animation, .project-support__img-animation {
+  position: relative;
+  overflow: hidden;
+}
+
+.pg-active .project-support__img-animation {
+  height: 52.2rem;
+}
+
+.interiors-swiper-slide__img-animation, .interiors__content {
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-swiper-slide__wrapper {
+  overflow: hidden;
+}
