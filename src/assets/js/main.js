@@ -226,5 +226,6 @@ $(document).ready(function() {
 
     setTimeout(function () {
         $("body").removeClass("isLoading")
+        $(".introAnimation").addClass("pg-active")
     },300)
 });

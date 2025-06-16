@@ -4135,11 +4135,13 @@ input.input-text, textarea.input-text {
   height: 100vh;
 
 }
-.main-slide__content {
+.test-slide__content {
   width: 100%;
   height: 100%;
   display: flex;
-  font-size: 8rem;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
