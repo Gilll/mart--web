@@ -4091,4 +4091,235 @@ input.input-text, textarea.input-text {
   overflow: hidden;
 }
 
+.supervisors.supervisors-2 .supervisors__button-anchor {
+  width: 30.5rem;
+  left: unset;
+  right: 0;
+}
+.supervisors.supervisors-2 .supervisors__title {
+  margin-left: 0;
+}
+.supervisors.supervisors-2 .supervisors__type {
+  margin-bottom: 3.2rem;
+}
+.supervisors.supervisors-2 .supervisors__top {
+  padding-top: 11.5rem;
+}
+.supervisors.supervisors-2 .supervisors__content-top {
+  margin-left: 0;
+}
+.supervisors.supervisors-2 .supervisors__content-first {
+  width: 51rem;
+}
+.supervisors.supervisors-2 .supervisors__sub-title {
+  line-height: 1.4;
+}
+.supervisors.supervisors-2 .supervisors__content-text {
+  width: 51rem;
+  padding-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.supervisors.supervisors-2 .supervisors__content {
+  width: 172.8rem;
+}
+.supervisors.supervisors-2 .supervisors__top {
+  width: 172.8rem;
+}
+.supervisors.supervisors-2 .supervisors__content-second {
+  width: 62.8rem;
+  margin-top: -3.5rem;
+}
+.supervisors.supervisors-2 .pg-active .supervisors__content-second {
+  height: 43.5rem;
+}
+.supervisors.supervisors-2 .supervisors__content-text-2:last-child {
+  margin-top: 4rem;
+}
+.supervisors.supervisors-2 .supervisors__content-main img {
+  object-position: top;
+}
+
+.piter2__top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.piter2__top-right {
+  width: 40.3rem;
+}
+
+.piter2__top-text {
+  font-size: 2rem;
+  line-height: 1.28;
+  margin-bottom: 5rem;
+}
+
+.piter2-slider-wrapper {
+  height: 45rem;
+  width: 100%;
+}
+
+.piter2-slider img, .spesialits2-slider img {
+  width: 100%;
+  height: 0;
+  object-fit: cover;
+  transition: 0.3s;
+}
+
+.spesialits2-slider img {
+  object-position: top;
+}
+
+.pg-active .piter2-slider img {
+  height: 45rem;
+  transition: 1s;
+}
+
+.pg-active .spesialits2-slider img {
+  height: 45rem;
+  transition: 1s;
+}
+
+.piter2-slider__double-img-wrapper {
+  height: 45rem;
+  width: calc(40rem - 32px);
+}
+
+.spesialits2-box {
+  width: calc(40rem - 32px);
+}
+
+.piter2-slider__img {
+  height: 45rem;
+  width: 100%;
+  display: flex;
+  align-items: end;
+}
+
+.piter2-slider {
+  height: 45rem;
+}
+.piter2-slider .swiper-slide {
+  height: 45rem;
+}
+
+.piter2-slider__double-img {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.swiper-arrows {
+  display: flex;
+  justify-content: space-between;
+  width: 6.4rem;
+  align-items: center;
+  height: 2.5rem;
+}
+.swiper-arrows svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+}
+
+.swiper-arrow-left, .swiper-arrow-right {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition: 0.3s;
+}
+
+.pg-active .swiper-arrow-left, .pg-active .swiper-arrow-right {
+  height: 2.5rem;
+  transition: 1s;
+}
+
+.piter2__top .swiper-arrows {
+  margin-top: 2.4rem;
+}
+
+.spesialits2-slider {
+  height: 56rem;
+}
+.spesialits2-slider .swiper-slide {
+  height: 56rem;
+}
+
+.spesialits2 .piter2-slider-wrapper {
+  height: 56rem;
+}
+
+.spesialits2__name {
+  margin-top: 4rem;
+  font-family: "Forum", serif;
+  font-size: 2.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.8rem;
+}
+
+.spesialits2__role {
+  font-size: 2rem;
+  line-height: 1.28;
+}
+
+.spesialits2 .piter__title-animation-wrap {
+  height: 16rem;
+}
+.spesialits2 .piter__title {
+  height: 16rem;
+}
+.spesialits2 .piter__gray-line {
+  top: 9.8rem;
+}
+.spesialits2 .piter2__top-right {
+  width: 60rem !important;
+}
+
+.pg-active .spesialits2 .piter__title-animation {
+  height: 16rem;
+}
+
+.animation-state-1 .contacts-page .animation-button-height {
+  height: 0;
+  transition: 1s;
+}
+
+.animation-state-1 .contacts-page .main-view__button-text {
+  height: 0;
+  transition: 1s;
+}
+
+.animation-state-1 .contacts-page .main-view__arrow {
+  height: 0;
+  transition: 1s;
+}
+
+.contacts-page input.input-text {
+  width: 100%;
+}
+
+.contacts-page .feedback-form__wrapper .primary-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.projects-swiper-slide__params {
+  position: absolute;
+  bottom: -8.5rem;
+  left: 29.5rem;
+  font-size: 2.2rem;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+
+.upper {
+  font-size: 0.7em;
+  position: relative;
+  bottom: 0.5em;
+}
+
 /*# sourceMappingURL=style.css.map */
