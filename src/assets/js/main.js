@@ -10,6 +10,21 @@ $(document).ready(function() {
         })
     }
 
+    $("[open-modal]").click(function() {
+        let selector = $(this).attr("open-modal");
+        $(selector).addClass("is-open");
+        $("#container").addClass("scroll-lock");
+    })
+
+    $(".close-modal").click(function() {
+        $(this).parent().parent().removeClass("is-open");
+        $("#container").removeClass("scroll-lock");
+    })
+
+    $(".show-success-block").click(function() {
+        $(this).parents(".modal-content").addClass("is-success");
+    })
+
     if ($(".main-swiper")) {
         let lockScrollEv = false
         const s = new Swiper('.main-swiper', {
@@ -29,10 +44,22 @@ $(document).ready(function() {
                     if (s.activeIndex + 1 <= s.slides.length) {
                         s.slides[s.activeIndex + 1].classList.remove('pg-active')
                     }
-                    if ($(s.slides[s.activeIndex]).hasClass('white-header')) {
-                        $(".header").addClass("white")
+                    if (s.slides[s.activeIndex].dataset.animationSteps) {
+                        let el = s.slides[s.activeIndex],
+                            step = parseInt(el.dataset.animationStep),
+                            whiteHeader = el.dataset.whiteHeaderSteps ? el.dataset.whiteHeaderSteps.split(',') : []
+
+                        if (whiteHeader.includes(step + "")) {
+                            $(".header").addClass("white")
+                        } else {
+                            $(".header").removeClass("white")
+                        }
                     } else {
-                        $(".header").removeClass("white")
+                        if ($(s.slides[s.activeIndex]).hasClass('white-header')) {
+                            $(".header").addClass("white")
+                        } else {
+                            $(".header").removeClass("white")
+                        }
                     }
                 },
                 slidePrevTransitionEnd: s => {
@@ -42,10 +69,22 @@ $(document).ready(function() {
                     if (s.activeIndex > 0) {
                         s.slides[s.activeIndex - 1].classList.remove('pg-active')
                     }
-                    if ($(s.slides[s.activeIndex]).hasClass('white-header')) {
-                        $(".header").addClass("white")
+                    if (s.slides[s.activeIndex].dataset.animationSteps) {
+                        let el = s.slides[s.activeIndex],
+                            step = parseInt(el.dataset.animationStep),
+                            whiteHeader = el.dataset.whiteHeaderSteps ? el.dataset.whiteHeaderSteps.split(',') : []
+
+                        if (whiteHeader.includes(step + "")) {
+                            $(".header").addClass("white")
+                        } else {
+                            $(".header").removeClass("white")
+                        }
                     } else {
-                        $(".header").removeClass("white")
+                        if ($(s.slides[s.activeIndex]).hasClass('white-header')) {
+                            $(".header").addClass("white")
+                        } else {
+                            $(".header").removeClass("white")
+                        }
                     }
                 },
                 slideNextTransitionEnd: s => {
@@ -54,7 +93,7 @@ $(document).ready(function() {
             }
         });
         $("#container").on("wheel", ev => {
-            if (!lockScrollEv) {
+            if (!lockScrollEv && !$("#container").hasClass("scroll-lock")) {
                 lockScrollEv = true
                 if (ev.originalEvent.deltaY > 0) {
                     let el = s.slides[s.activeIndex]
@@ -239,19 +278,18 @@ $(document).ready(function() {
             navigation: {
                 nextEl: '.interiors-swiper__next',
                 prevEl: '.interiors-swiper__prev',
-            },
-            on: {
-                slidePrevTransitionStart: s => {
-
-                }
-                ,
-                slidePrevTransitionEnd: s => {
-
-                }
-                ,
-                slideNextTransitionStart: s => {
-
-                }
+            }
+        });
+    }
+    if ($(".interiors-swiper2")) {
+        const swiper = new Swiper('.interiors-swiper2', {
+            direction: 'horizontal',
+            loop: true,
+            slidesPerView: 1.3,
+            speed: 1000,
+            navigation: {
+                nextEl: '.interiors-swiper__next2',
+                prevEl: '.interiors-swiper__prev2',
             }
         });
     }
