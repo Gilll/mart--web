@@ -497,7 +497,7 @@ section {
   overflow: hidden;
   right: 9.4rem;
   bottom: $vh * 197;
-  z-index: 99;
+  z-index: 97;
   transition: 0.3s;
   &-animation {
     display: flex;
@@ -1183,7 +1183,7 @@ section {
 }
 
 .pg-active.animation-state-0 .premium__gray-line {
-  width: 100%;
+  width: 0;
   transition: 1s 1s;
 }
 .pg-active.animation-state-1 .premium__gray-line {
@@ -1194,6 +1194,19 @@ section {
 .pg-active.animation-state-1.video-playing .premium__gray-line {
   width: 0;
   transition: 0.5s;
+}
+
+.pg-active.animation-state-0.premium-block .main-view__button-text {
+  height: 0;
+  transition: 0.5s 0s;
+}
+.pg-active.animation-state-0.premium-block .main-view__arrow {
+  height: 0;
+  transition: 0.5s 0s;
+}
+.pg-active.animation-state-0.premium-block .animation-button-height {
+  height: 0;
+  transition: 0.5s 0s;
 }
 .pg-active.animation-state-1.video-playing .main-view__button-text {
   height: 0;

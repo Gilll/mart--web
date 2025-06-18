@@ -175,6 +175,17 @@ $(document).ready(function() {
                             } else {
                                 $(".header").removeClass("white")
                             }
+                            if (el.classList.contains("premium-block")) {
+                                el.classList.remove("video-playing")
+                                let vid = document.getElementById("premium-video")
+                                if (vid) {
+                                    let v=vid.currentSrc;
+                                    vid.pause();
+                                    vid.currentTime = 0;
+                                    vid.src='';
+                                    vid.src=v;
+                                }
+                            }
                             setTimeout(function() { lockScrollEv = false }, 1000)
                         } else {
                             if (s.activeIndex > 0) {
