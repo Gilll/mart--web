@@ -5,7 +5,7 @@ $(document).ready(function() {
         $("#play-video").click(function() {
             let vid = document.getElementById("premium-video")
             $(".header").addClass("white")
-            $("#premium").attr("animation-step", 1).removeClass("animation-state-0").addClass("animation-state-1")
+            $("#premium").addClass("video-playing")
             if (vid) vid.play()
         })
     }
@@ -14,6 +14,17 @@ $(document).ready(function() {
         let selector = $(this).attr("open-modal");
         $(selector).addClass("is-open");
         $("#container").addClass("scroll-lock");
+    })
+
+    $(".projects-change-state").click(function() {
+        $(this).parents(".swiper-slide").removeClass("animation-state-0")
+            .addClass("animation-state-1").attr("data-animation-step", "1");
+        $(".header").addClass("white")
+    })
+    $(".premium-change-state").click(function() {
+        $("#premium").removeClass("animation-state-0")
+            .addClass("animation-state-1").attr("data-animation-step", "1");
+        $(".header").addClass("white")
     })
 
     $(".close-modal").click(function() {
@@ -43,6 +54,17 @@ $(document).ready(function() {
                 slidePrevTransitionStart: s => {
                     if (s.activeIndex + 1 <= s.slides.length) {
                         s.slides[s.activeIndex + 1].classList.remove('pg-active')
+                        if (s.slides[s.activeIndex + 1].classList.contains("premium-block")) {
+                            s.slides[s.activeIndex + 1].classList.remove('video-playing')
+                            let vid = document.getElementById("premium-video")
+                            if (vid) {
+                                let v=vid.currentSrc;
+                                vid.pause();
+                                vid.currentTime = 0;
+                                vid.src='';
+                                vid.src=v;
+                            }
+                        }
                     }
                     if (s.slides[s.activeIndex].dataset.animationSteps) {
                         let el = s.slides[s.activeIndex],
@@ -68,6 +90,17 @@ $(document).ready(function() {
                 slideNextTransitionStart: s => {
                     if (s.activeIndex > 0) {
                         s.slides[s.activeIndex - 1].classList.remove('pg-active')
+                        if (s.slides[s.activeIndex - 1].classList.contains("premium-block")) {
+                            s.slides[s.activeIndex - 1].classList.remove('video-playing')
+                            let vid = document.getElementById("premium-video")
+                            if (vid) {
+                                let v=vid.currentSrc;
+                                vid.pause();
+                                vid.currentTime = 0;
+                                vid.src='';
+                                vid.src=v;
+                            }
+                        }
                     }
                     if (s.slides[s.activeIndex].dataset.animationSteps) {
                         let el = s.slides[s.activeIndex],

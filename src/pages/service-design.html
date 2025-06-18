@@ -137,11 +137,11 @@
                                                 <div class="design-main__props">
                                                     <div class="design-main__props-item">
                                                         <div class="design-main__props-item-label">объекты</div>
-                                                        <div class="design-main__props-item-value">от 100 м<span>2</span></div>
+                                                        <div class="design-main__props-item-value">от 100 м<span class="upper">2</span></div>
                                                     </div>
                                                     <div class="design-main__props-item">
                                                         <div class="design-main__props-item-label">цена</div>
-                                                        <div class="design-main__props-item-value">12 000 ₽ / м<span>2</span></div>
+                                                        <div class="design-main__props-item-value">12 000 ₽ / м<span class="upper">2</span></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -261,7 +261,7 @@
                     </div>
                 </div>
             </div>
-            <div data-animation-steps="2" data-animation-step="0" data-white-header-steps="1" class="swiper-slide animation-state-0">
+            <div id="premium" data-animation-steps="2" data-animation-step="0" data-white-header-steps="1" class="swiper-slide animation-state-0 premium-block">
                 <div class="test-slide__content">
                     <div class="premium__video premium-section" data-anchor="premium">
                         <section class="premium">
@@ -325,6 +325,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="premium-change-state"></div>
                             <div class="premium__button-anchor">
                                 <div class="premium__gray-line"></div>
                                 <div id="play-video" class="premium__button">
@@ -784,13 +785,19 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="projects-change-state"></div>
                             <div class="swiper projects-swiper">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
                                         <div class="projects-swiper-slide__content">
+                                            <div class="projects-swiper-slide__params">
+                                                2021
+                                                <span class="dot"></span>
+                                                55 М <span class="upper">2</span>
+                                            </div>
                                             <div class="projects-swiper-slide__button-anchor">
                                                 <div class="main-view__button-text-wrapper">
-                                                    <div class="main-view__button-text">оставить<br>заявку</div>
+                                                    <div class="main-view__button-text">смотреть<br>проект</div>
                                                 </div>
                                                 <div class="main-view__arrow-wrapper">
                                                     <div class="main-view__arrow">
@@ -820,21 +827,153 @@
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
+                                        <div class="projects-swiper-slide__content">
+                                            <div class="projects-swiper-slide__params">
+                                                2021
+                                                <span class="dot"></span>
+                                                55 М <span class="upper">2</span>
+                                            </div>
+                                            <div class="projects-swiper-slide__button-anchor">
+                                                <div class="main-view__button-text-wrapper">
+                                                    <div class="main-view__button-text">смотреть<br>проект</div>
+                                                </div>
+                                                <div class="main-view__arrow-wrapper">
+                                                    <div class="main-view__arrow">
+                                                        <svg class="icon-arrow-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M14.4297 5.92969L20.4997 11.9997L14.4297 18.0697" stroke="#FFFEF8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M3.5 12H20.33" stroke="#FFFEF8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="animation-button-height">
+                                                    <div class="round-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="projects-swiper-slide__title">
+                                                <div class="projects-swiper-slide__title-animation-wrapper">
+                                                    <div class="projects-swiper-slide__title-animation">White 1</div>
+                                                </div>
+                                            </div>
+                                            <div class="projects-swiper-slide__text">
+                                                <div class="projects-swiper-slide__text-animation-wrapper">
+                                                    <div class="projects-swiper-slide__text-animation">Оформление квартиры</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="projects-swiper-slide__wrapper">
                                             <img src="../assets/images/MSC-21.png" alt="">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
+                                        <div class="projects-swiper-slide__content">
+                                            <div class="projects-swiper-slide__params">
+                                                2021
+                                                <span class="dot"></span>
+                                                55 М <span class="upper">2</span>
+                                            </div>
+                                            <div class="projects-swiper-slide__button-anchor">
+                                                <div class="main-view__button-text-wrapper">
+                                                    <div class="main-view__button-text">смотреть<br>проект</div>
+                                                </div>
+                                                <div class="main-view__arrow-wrapper">
+                                                    <div class="main-view__arrow">
+                                                        <svg class="icon-arrow-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M14.4297 5.92969L20.4997 11.9997L14.4297 18.0697" stroke="#FFFEF8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M3.5 12H20.33" stroke="#FFFEF8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="animation-button-height">
+                                                    <div class="round-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="projects-swiper-slide__title">
+                                                <div class="projects-swiper-slide__title-animation-wrapper">
+                                                    <div class="projects-swiper-slide__title-animation">White 2</div>
+                                                </div>
+                                            </div>
+                                            <div class="projects-swiper-slide__text">
+                                                <div class="projects-swiper-slide__text-animation-wrapper">
+                                                    <div class="projects-swiper-slide__text-animation">Оформление квартиры</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="projects-swiper-slide__wrapper">
                                             <img src="../assets/images/069_DSCF4268-HDR.png" alt="">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
+                                        <div class="projects-swiper-slide__content">
+                                            <div class="projects-swiper-slide__params">
+                                                2021
+                                                <span class="dot"></span>
+                                                55 М <span class="upper">2</span>
+                                            </div>
+                                            <div class="projects-swiper-slide__button-anchor">
+                                                <div class="main-view__button-text-wrapper">
+                                                    <div class="main-view__button-text">смотреть<br>проект</div>
+                                                </div>
+                                                <div class="main-view__arrow-wrapper">
+                                                    <div class="main-view__arrow">
+                                                        <svg class="icon-arrow-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M14.4297 5.92969L20.4997 11.9997L14.4297 18.0697" stroke="#FFFEF8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M3.5 12H20.33" stroke="#FFFEF8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="animation-button-height">
+                                                    <div class="round-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="projects-swiper-slide__title">
+                                                <div class="projects-swiper-slide__title-animation-wrapper">
+                                                    <div class="projects-swiper-slide__title-animation">White 3</div>
+                                                </div>
+                                            </div>
+                                            <div class="projects-swiper-slide__text">
+                                                <div class="projects-swiper-slide__text-animation-wrapper">
+                                                    <div class="projects-swiper-slide__text-animation">Оформление квартиры</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="projects-swiper-slide__wrapper">
                                             <img src="../assets/images/MSC-21.png" alt="">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
+                                        <div class="projects-swiper-slide__content">
+                                            <div class="projects-swiper-slide__params">
+                                                2021
+                                                <span class="dot"></span>
+                                                55 М <span class="upper">2</span>
+                                            </div>
+                                            <div class="projects-swiper-slide__button-anchor">
+                                                <div class="main-view__button-text-wrapper">
+                                                    <div class="main-view__button-text">смотреть<br>проект</div>
+                                                </div>
+                                                <div class="main-view__arrow-wrapper">
+                                                    <div class="main-view__arrow">
+                                                        <svg class="icon-arrow-right" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M14.4297 5.92969L20.4997 11.9997L14.4297 18.0697" stroke="#FFFEF8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            <path d="M3.5 12H20.33" stroke="#FFFEF8" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <div class="animation-button-height">
+                                                    <div class="round-button"></div>
+                                                </div>
+                                            </div>
+                                            <div class="projects-swiper-slide__title">
+                                                <div class="projects-swiper-slide__title-animation-wrapper">
+                                                    <div class="projects-swiper-slide__title-animation">White Khamovniki</div>
+                                                </div>
+                                            </div>
+                                            <div class="projects-swiper-slide__text">
+                                                <div class="projects-swiper-slide__text-animation-wrapper">
+                                                    <div class="projects-swiper-slide__text-animation">Оформление квартиры</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="projects-swiper-slide__wrapper">
                                             <img src="../assets/images/069_DSCF4268-HDR.png" alt="">
                                         </div>
@@ -885,6 +1024,7 @@
                                     <div class="faq__right">
                                         <div class="faq__right-animation">
                                             <div class="faq-list">
+                                                <div class="faq-list__gray-line"></div>
                                                 <div class="faq-list__item">
                                                     <div class="faq-list__item-row">
                                                         <div class="faq-list__item-num">01</div>
@@ -994,6 +1134,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                                <div class="faq-list__gray-line"></div>
                                             </div>
                                         </div>
                                     </div>
