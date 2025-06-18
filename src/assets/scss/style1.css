@@ -1177,6 +1177,10 @@ section.main-view {
   transition: 0.5s;
 }
 
+.faq-list__gray-line:first-child {
+  margin-top: 0;
+}
+
 .pg-active.animation-state-0.premium-block .main-view__button-text {
   height: 0;
   transition: 0.5s 0s;
@@ -3627,7 +3631,6 @@ input.input-text, textarea.input-text {
 
 .faq-list {
   box-sizing: border-box;
-  padding-top: 1.5rem;
   height: 70rem;
   width: 84.2rem;
 }
