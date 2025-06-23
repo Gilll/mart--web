@@ -338,6 +338,12 @@ $(document).ready(function() {
         });
     }
 
+    $(".time-selector__item").click(function () {
+        $(".time-selector__item").removeClass("active");
+        $(this).addClass("active");
+        $("#selected-time").val($(this).html())
+    })
+
     setTimeout(function () {
         $("body").removeClass("isLoading")
         $(".introAnimation").addClass("pg-active")

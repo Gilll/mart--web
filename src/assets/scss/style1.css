@@ -146,7 +146,6 @@ section.main-view {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: #FFFEF8;
-  text-shadow: 1px 1px 1px black;
 }
 .main-view__button-anchor {
   position: absolute;
@@ -206,6 +205,7 @@ section.main-view {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 6.8rem;
 }
 
 .logo-top {
@@ -220,6 +220,7 @@ section.main-view {
 .logo-bottom {
   margin-top: 0.6rem;
   height: 1rem;
+  width: 6.1rem;
 }
 
 .projects-top {
@@ -419,7 +420,6 @@ section.main-view {
   font-size: 1.4rem;
   line-height: 2.2rem;
   letter-spacing: 0.12em;
-  text-shadow: black 1px 1px 1px;
 }
 .projects-swiper-slide__text-animation {
   position: relative;
@@ -437,7 +437,6 @@ section.main-view {
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  text-shadow: 1px 1px 1px black;
   flex-grow: 1;
   height: 7.2rem;
 }
@@ -1582,7 +1581,6 @@ section.main-view {
   top: 6rem;
   right: 5.4rem;
   color: #FFFEF8;
-  text-shadow: 1px 1px 1px black;
   z-index: 10;
 }
 .result-swiper__slide {
@@ -1685,7 +1683,7 @@ section.main-view {
   letter-spacing: 0.04em;
   margin-bottom: 3.8rem;
 }
-.feedback-form input {
+.feedback-form input[type=text] {
   opacity: 0;
   width: 100%;
   transition: 0.3s;
@@ -1933,7 +1931,6 @@ input.input-text, textarea.input-text {
   z-index: 2;
   top: 5rem;
   left: 5rem;
-  text-shadow: black 1px 1px 1px;
 }
 .services-section__item img {
   width: 70rem;
@@ -2493,7 +2490,6 @@ input.input-text, textarea.input-text {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 5.6rem;
-  text-shadow: black 1px 1px 1px;
 }
 .project__props {
   display: flex;
@@ -2913,7 +2909,6 @@ input.input-text, textarea.input-text {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-bottom: 2.6rem;
-  text-shadow: black 1px 1px 1px;
 }
 .about-section__button-anchor {
   position: absolute;
@@ -3894,7 +3889,6 @@ input.input-text, textarea.input-text {
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  text-shadow: black 1px 1px 1px;
 }
 .vision-main__gray-line {
   position: absolute;
@@ -4748,6 +4742,7 @@ input.input-text, textarea.input-text {
   position: absolute;
   top: 6rem;
   right: 9.6rem;
+  z-index: 10000;
 }
 .close-modal svg {
   width: 4.8rem;
@@ -4780,7 +4775,7 @@ input.input-text, textarea.input-text {
 .modal-form {
   width: 50rem;
 }
-.modal-form input, .modal-form textarea {
+.modal-form input[type=text], .modal-form textarea {
   width: 50rem;
 }
 
@@ -4802,7 +4797,10 @@ input.input-text, textarea.input-text {
 
 .modal-img {
   width: 90rem;
-  height: 41rem;
+  height: 49rem;
+}
+.modal-img.second {
+  height: 61rem;
 }
 .modal-img img {
   width: 100%;
@@ -4889,6 +4887,112 @@ input.input-text, textarea.input-text {
 .pg-active .page404-img img {
   height: 100%;
   transition: 1s;
+}
+
+.faq__left {
+  display: flex;
+  flex-direction: column;
+}
+
+.faq__img {
+  height: unset;
+  flex-grow: 1;
+}
+
+.pg-active .faq__img-animation {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.pg-active .faq__img-animation img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+}
+
+.bread-crumbs {
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: left bottom;
+  transition: 0.3s;
+  color: #FFFEF8;
+}
+.bread-crumbs .slash {
+  margin: 0 1rem;
+}
+.bread-crumbs a {
+  color: #FFFEF8;
+}
+.bread-crumbs.absolute {
+  position: absolute;
+  z-index: 20;
+  bottom: 4rem;
+  left: 4rem;
+}
+
+.pg-active .bread-crumbs {
+  opacity: 1;
+  transform: scale(1);
+  transition: 1s 0.5s;
+}
+
+.faq-list {
+  height: unset;
+}
+
+.faq__scroll {
+  min-height: unset;
+}
+
+.modal-form-ckeck {
+  margin-bottom: 4rem;
+  line-height: 2rem;
+}
+.modal-form-ckeck input {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  top: 0.4rem;
+}
+
+.time-selector {
+  padding-bottom: 2.4rem;
+}
+.time-selector__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -1.6rem;
+}
+.time-selector__title {
+  margin-bottom: 1.6rem;
+}
+.time-selector__item {
+  margin-bottom: 1.6rem;
+  margin-left: 1.6rem;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem 0 1.2rem;
+  justify-content: center;
+  color: #140E0A;
+  border: 1px solid #140E0A;
+  background-color: #FFFEF8;
+  font-size: 1.6rem;
+  opacity: 0.4;
+  transition: 0.5s;
+  width: 15.4rem;
+}
+.time-selector__item:hover {
+  opacity: 1;
+  transition: 0.5s;
+}
+.time-selector__item.active {
+  opacity: 1;
+  background-color: #140E0A;
+  color: #FFFEF8;
+  transition: 0.5s;
 }
 
 /*# sourceMappingURL=style1.css.map */
