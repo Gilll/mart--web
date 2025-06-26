@@ -344,6 +344,10 @@ $(document).ready(function() {
         $("#selected-time").val($(this).html())
     })
 
+    $("#accept-cookies").click(function () {
+        $(".cookies-wrapper").addClass("cookies-accepted");
+    })
+
     setTimeout(function () {
         $("body").removeClass("isLoading")
         $(".introAnimation").addClass("pg-active")
